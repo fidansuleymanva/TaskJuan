@@ -1,0 +1,60 @@
+﻿@model Slider
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Slider</h1>
+<div>
+	<form method="post" asp-action="delete">
+		<div class="row">
+			<div class="mb-3 col-md-3">
+				<label asp-for="Title" class="form-label">Title</label>
+				<input class="form-control" asp-for="Title" placeholder="Title">
+				<span asp-validation-for="FormFile" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="Desc" class="form-label">Desc</label>
+				<input class="form-control" asp-for="Desc" placeholder="Desc">
+				<span asp-validation-for="FormFile" class="text-danger"></span>
+			</div>
+			<div class="mb-3 col-md-3">
+				<label asp-for="Tag" class="form-label">Tag</label>
+				<input class="form-control" asp-for="Tag" placeholder="Tag">
+			</div>
+			<div class="mb-3 col-md-3">
+				<label asp-for="Button" class="form-label">Button</label>
+				<input class="form-control" asp-for="Button" placeholder="Button">
+				<span asp-validation-for="FormFile" class="text-danger"></span>
+			</div>
+			@*<div class="col-md-3">
+			<label asp-for="Desc" class="form-label">Desc</label>
+			<textarea style="width:500px" height:100px class="form-control" asp-for="Desc" placeholder="Desc"></textarea>
+
+			</div>*@
+			<div>
+				<div class="mb-3 col-md-3">
+					<label asp-for="URL" class="form-label">URL</label>
+					<input class="form-control" asp-for="URL" placeholder="URL">
+				</div>
+			</div>
+
+			@*<div style="margin-bottom:20px">
+			<label asp-for="Order" class="form-label">Order</label>
+			<input class="form-control" asp-for="Order" placeholder="Order">
+			</div>*@
+
+			<div style="margin-bottom:20px">
+				<label asp-for="FormFile" class="form-label">FormFile</label>
+				<input class="form-control" asp-for="FormFile" placeholder="FormFile">
+				<span asp-validation-for="FormFile" class="text-danger"></span>
+			</div>
+			<div style="width:250px">
+				<img style="max-width:100%" src="~/uploads/sliders/@Model.Image" />
+			</div>
+			<div style="display:flex; justify-content:center;align-items:center">
+
+				<button type="submit" class="btn btn-primary">Delete</button>
+	</form>
+</div>
+
+

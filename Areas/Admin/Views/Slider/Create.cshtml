@@ -1,0 +1,51 @@
+﻿@model Slider
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Create Slider</h1>
+<div>
+	<form method="post" asp-action="create" enctype="multipart/form-data">
+		<div class="row">
+			<div class="mb-3 col-md-3">
+				<label asp-for="Title" class="form-label">Title</label>
+				<input class="form-control" asp-for="Title" placeholder="Title">
+			</div>
+			<div class="mb-3 col-md-2">
+				<label asp-for="Desc" class="form-label">Desc</label>
+				<input class="form-control" asp-for="Desc" placeholder="Desc">
+			</div>
+			<div class="mb-3  col-md-2 ">
+				<label asp-for="Tag" class="form-label">Tag</label>
+				<input class="form-control" asp-for="Tag" placeholder="Tag">
+			</div>
+			@*<div class="mb-3  col-md-2">
+				<label asp-for="" class="form-label"></label>
+				<input class="form-control" asp-for="RedirecUrlText" placeholder="RedirecUrlText">
+			</div>*@
+			<@*div class="mb-3  col-md-2">
+				<label asp-for="Desc" class="form-label">Desc</label>
+				<textarea style="width:500px" height:100px class="form-control" asp-for="Desc" placeholder="Desc"></textarea>
+			</div>*@
+			<div class="mb-3 col-md-2" style="margin-bottom:20px">
+				<label asp-for="FormFile" class="form-label"> FormFile</label>
+				<input class="form-control" asp-for="FormFile" placeholder="FormFile">
+			</div>
+			<div class="mb-3 col-md-2" style="margin-bottom:20px">
+				<label asp-for="Button" class="form-label"> Button</label>
+				<input class="form-control" asp-for="Button" placeholder="Button">
+			</div>
+			<div class="mb-3 col-md-2" style="margin-bottom:20px">
+				<label asp-for="URL" class="form-label"> URL</label>
+				<input class="form-control" asp-for="URL" placeholder="URL">
+			</div>
+
+
+
+			<div style="display:flex; justify-content:center;align-items:center">
+
+				<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+</div>
+

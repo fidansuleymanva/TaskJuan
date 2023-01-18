@@ -1,0 +1,65 @@
+﻿@model List<Slider>
+
+@{
+    int counter = 0;
+}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between">
+        <h1> Slider</h1>
+
+        <a asp-action="create" asp-controller="Slider" class="btn btn-outline-info  ">Create</a>
+
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Image</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@item.Title</td>
+                    <td>@item.Desc</td>
+                    <td>@item.Tag</td>
+                    <td>
+                        <img style="width:150px" src="~/uploads/sliders/@item.Image"></img>
+                    </td>
+                    <td>
+                        <div class="row ">
+                            <a asp-controller="Slider" asp-action="Update" asp-route-id="@item.Id">
+                                <button type="button" class="mt-2 btn  btn-info">
+                                    <i class="bi bi-pencil-square"></i>
+                                    Update
+                                </button>
+                            </a>
+                        </div>
+                        <div class="row ">
+                            <a asp-controller="Slider" asp-action="Delete" asp-route-id="@item.Id">
+                                <button type="button" class="mt-2 btn  btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                    Delete
+                                </button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
